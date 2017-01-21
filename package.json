@@ -1,6 +1,6 @@
 {
   "name": "scarletjs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple templating library",
   "main": "index.js",
   "scripts": {
