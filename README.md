@@ -1,4 +1,4 @@
-### Scarlet.js
+### Scarlet.js  [![Build Status](https://travis-ci.org/VictorVolovik/scarlet.js.svg?branch=master)](https://travis-ci.org/VictorVolovik/scarlet.js)
 #### Simple templating library
 
 Some experements based on my [codepen example](http://codepen.io/victorvolovik/pen/KaWRVK?editors=0010).
