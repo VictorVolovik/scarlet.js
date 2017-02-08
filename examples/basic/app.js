@@ -1,3 +1,3 @@
-const p = scarlet('p', 'My name is {name}.', {name: 'Victor'});
+const p = scarlet({elem: 'p', str: 'My name is {name}.', props: {name: 'Victor'}});
 const app = document.getElementById('app');
 app.innerHTML = p;

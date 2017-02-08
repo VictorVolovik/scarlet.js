@@ -9,12 +9,12 @@ describe('Scarlet', () => {
   describe('Create element', () => {
     it('should create an element', () => {
       const expected = '<p></p>';
-      const actual = scarlet('p');
+      const actual = scarlet({elem: 'p'});
       expect(actual).to.be.equal(expected);
     });
     it('should create another element', () => {
       const expected = '<div></div>';
-      const actual = scarlet('div');
+      const actual = scarlet({elem: 'div'});
       expect(actual).to.be.equal(expected);
     });
   });
@@ -22,7 +22,7 @@ describe('Scarlet', () => {
   describe('Render string', () => {
     it('should render string inside element', () => {
       const expected = '<div>Test</div>';
-      const actual = scarlet('div', 'Test');
+      const actual = scarlet({elem: 'div', str: 'Test'});
       expect(actual).to.be.equal(expected);
     });
   });
@@ -33,7 +33,7 @@ describe('Scarlet', () => {
         name: 'Alfred'
       };
       const expected = '<p>My name is Alfred.</p>';
-      const actual = scarlet('p', 'My name is {name}.', user);
+      const actual = scarlet({elem: 'p', str: 'My name is {name}.', props: user});
       expect(actual).to.be.equal(expected);
     });
   });
@@ -51,8 +51,15 @@ describe('Scarlet', () => {
         }
       ];
       const expected = '<ul><li>Guffy is 4 years old.</li><li>Pluto is 2 years old.</li></ul>';
-      const dogsList = dogs.map(dog => scarlet('li', '{name} is {age} years old.', dog));
-      const actual = scarlet('ul', "", {}, dogsList);
+      const dogsList = dogs.map(dog => scarlet({
+          elem: 'li',
+          str: '{name} is {age} years old.',
+          props: dog
+        }));
+      const actual = scarlet({
+        elem: 'ul',
+        children: dogsList
+      });
       expect(actual).to.be.equal(expected);
     });
   });

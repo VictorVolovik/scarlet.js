@@ -1,4 +1,4 @@
-const scarlet = (elem, str="", props={}, children=[]) => {
+const scarlet = ({elem, str="", props={}, children=[]} = {}) => {
   for (let prop in props) {
     str = str.replace(new RegExp('{' + prop + '}', 'g'), props[prop]);
   }
